@@ -19,7 +19,7 @@ def commonBase(fileName, extensions):
             ext = match.group(2)
     return base, ext
 
-class SwitchFileDeluxeCommand(sublime_plugin.WindowCommand):
+class SwitchBemTechsCommand(sublime_plugin.WindowCommand):
     def run(self, extensions=[]):
         if not self.window.active_view():
             return
@@ -42,23 +42,13 @@ class SwitchFileDeluxeCommand(sublime_plugin.WindowCommand):
                     count -= 1
                     break
 
-        dirsWithOpenedFiles = set([os.path.dirname(v.file_name()) for v in self.window.views() if v.file_name()])
-
         for i in range(0, count):
             idx = (start + i) % len(extensions)
 
             new_file = base + extensions[idx]
             new_path = os.path.join(dir, new_file)
+
             if os.path.exists(new_path):
+                sublime.status_message("File to switch found in current directory.")
                 self.window.open_file(new_path)
                 return
-            else:
-                for d in dirsWithOpenedFiles:
-                    if os.path.exists(os.path.join(d, new_file)):
-                        self.window.open_file(os.path.join(d, new_file))
-                        return
-
-        # Fallback to the Goto menu only if the file matches one of the extensions.
-        if base != file:
-            sublime.status_message("No file to switch found in directories of opened files, showing the Goto menu.")
-            self.window.run_command("show_overlay", {"overlay": "goto", "text": base})

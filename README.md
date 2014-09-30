@@ -1,18 +1,25 @@
-SublimeSwitchFileDeluxe
+SwitchBemTechs
 =======================
 
-Switch header/source based on generic suffixes (not just the extension).
+Switch between different bem-tech files(css,js,priv.js,deps.js,bh.js, bemhtml...) on same level with one keypress.
 
-If a file can't be found in the same directory, the command also search for it in the directory of other already opened files.
+If a different file can't be found on same level, does nothing.
+
 
 Example
 =======
+![sublimetext switch between bem-tech files ](/demo.png "switch between bem techs")
 
-Qt has private headers with a "<base>_p.h" suffix, and QtWebKit has platform specific implementation headers/sources with a "<base>Qt.<ext>" suffix.
-The following keymap setting would allow switching between "File.cpp" -> "FileQt.cpp" -> "FileQt.h" -> "File.h" -> "File_p.h" -> "File_p_p.h" -> ...
 
-    [
-        { "keys": ["alt+o"], "command": "switch_file_deluxe", "args": {"extensions": [".cpp", ".cxx", ".cc", ".c", "Qt.cpp", "Qt.h", ".hpp", ".hxx", ".h", "_p.h", "_p_p.h", ".ipp", ".inl", ".m", ".mm"]} }
-    ]
+Installation
+=======
 
-**Note:** The dot has to be explicitely specified before extensions, unlike the standard switch_file command.
+1. Ctrl+Shift+P → Package Control: Add Repository → https://github.com/i-akhmadullin/SwitchBemTechs
+
+2. Ctrl+Shift+P → Package Control: Install Package → SwitchBemTechs
+
+3. (Optional) If you want to override default F3 shortcut add line like this: 
+```json
+    { "keys": ["type_your_shortcut_here"], "command": "switch_bem_techs", "args": {"extensions": [".css", ".js", ".priv.js", ".deps.js", ".bh.js"]} } }
+```
+in `Sublime Text 3/Packages/User/Default.sublime-keymap` file.

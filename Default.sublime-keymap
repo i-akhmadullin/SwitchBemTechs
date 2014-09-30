@@ -1,0 +1,3 @@
+[
+    { "keys": ["f3"], "command": "switch_bem_techs", "args": {"extensions": [".css", ".js", ".priv.js", ".deps.js", ".bh.js"]} }
+]
