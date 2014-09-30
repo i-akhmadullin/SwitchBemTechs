@@ -20,6 +20,6 @@ Installation
 
 3. (Optional) If you want to override default F3 shortcut add line like this: 
 ```json
-    { "keys": ["type_your_shortcut_here"], "command": "switch_bem_techs", "args": {"extensions": [".css", ".js", ".priv.js", ".deps.js", ".bh.js"]} } }
+    { "keys": ["type_your_shortcut_here"], "command": "switch_bem_techs", "args": {"extensions": [".css", ".js", ".priv.js", ".deps.js", ".bh.js"]} }
 ```
 in `Sublime Text 3/Packages/User/Default.sublime-keymap` file.
