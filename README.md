@@ -8,7 +8,7 @@ If a different file can't be found on same level, does nothing.
 
 Example
 =======
-![sublimetext switch between bem-tech files ](/demo.png "switch between bem techs")
+![sublimetext switch between bem-tech files ](/demo.gif "switch between bem techs")
 
 
 Installation
