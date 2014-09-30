@@ -10,6 +10,9 @@ Example
 =======
 ![sublimetext switch between bem-tech files ](/demo.gif "switch between bem techs")
 
+Usage
+=======
+When bem tech file is open just press <kbd>F3</kbd> to switch between other tech files on same level (folder).
 
 Installation
 =======
